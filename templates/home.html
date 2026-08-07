@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+UrbanBites | Home
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            🍽️ Best Restaurant in Your City
+        </span>
+
+        <h1>
+            Delicious Food <br>
+            Delivered To Your Door
+        </h1>
+
+        <p>
+            Fresh ingredients, expert chefs, and lightning-fast delivery.
+            Enjoy your favorite meals anytime, anywhere.
+        </p>
+
+       <div class="hero-buttons">
+            <a href="{% url 'menu' %}" class="menu-btn">
+            View Menu</a>
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="{% static 'images/hero-food.png' %}" alt="Pizza">
+
+    </div>
+
+</section>
+<section class="popular-dishes">
+
+    <div class="section-title">
+        <span>🍴 Our Menu</span>
+        <h2>Popular Dishes</h2>
+        <p>Discover our most loved dishes prepared with fresh ingredients.</p>
+    </div>
+
+
+    <div class="dish-container">
+
+        <div class="dish-card">
+
+            <img src="{% static 'images/pizza.png' %}" alt="Pizza">
+
+            <h3>Italian Pizza</h3>
+
+            <p>
+                Fresh cheese, delicious toppings and authentic taste.
+            </p>
+
+            <div class="dish-bottom">
+                <h4>₹299</h4>
+                <a href="#">Order</a>
+            </div>
+
+        </div>
+
+
+        <div class="dish-card">
+
+            <img src="{% static 'images/burger.png' %}" alt="Burger">
+
+            <h3>Classic Burger</h3>
+
+            <p>
+                Juicy patty with fresh vegetables and special sauce.
+            </p>
+
+            <div class="dish-bottom">
+                <h4>₹199</h4>
+                <a href="#">Order</a>
+            </div>
+
+        </div>
+
+
+        <div class="dish-card">
+
+            <img src="{% static 'images/pasta.png' %}" alt="Pasta">
+
+            <h3>Creamy Pasta</h3>
+
+            <p>
+                Rich creamy sauce with authentic Italian flavors.
+            </p>
+
+            <div class="dish-bottom">
+                <h4>₹249</h4>
+                <a href="#">Order</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="testimonials">
+
+    <div class="section-title">
+        <span>⭐ Customer Reviews</span>
+        <h2>What Our Customers Say</h2>
+        <p>
+            Loved by food lovers across the city.
+        </p>
+    </div>
+
+
+    <div class="testimonial-container">
+
+        <div class="testimonial-card">
+
+            <div class="customer">
+                <div class="avatar">A</div>
+                <div>
+                    <h3>Arjun Patel</h3>
+                    <span>Food Lover</span>
+                </div>
+            </div>
+
+            <p>
+                "Amazing taste and super fast delivery.
+                The pizza was absolutely delicious!"
+            </p>
+
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+        </div>
+
+
+        <div class="testimonial-card">
+
+            <div class="customer">
+                <div class="avatar">R</div>
+                <div>
+                    <h3>Riya Sharma</h3>
+                    <span>Regular Customer</span>
+                </div>
+            </div>
+
+            <p>
+                "Fresh ingredients and great service.
+                UrbanBites is my favourite place!"
+            </p>
+
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+        </div>
+
+
+        <div class="testimonial-card">
+
+            <div class="customer">
+                <div class="avatar">K</div>
+                <div>
+                    <h3>Karan Mehta</h3>
+                    <span>Food Blogger</span>
+                </div>
+            </div>
+
+            <p>
+                "Perfect flavours and premium quality food.
+                Highly recommended!"
+            </p>
+
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="contact-section">
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <h2>Ready To Taste Something Amazing?</h2>
+
+            <p>
+                Order your favourite dishes from UrbanBites
+                and enjoy delicious food delivered to your door.
+            </p>
+
+            <div class="contact-details">
+
+                <p>Bhavnagar, Gujarat</p>
+                <p>+91 99872 22222</p>
+                <p>info@urbanbites.com</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-form">
+
+            <h3>Contact Us</h3>
+
+            <form>
+
+                <input type="text" placeholder="Your Name">
+
+                <input type="email" placeholder="Your Email">
+
+                <textarea placeholder="Your Message"></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="reservation-hero">
+    <div class="reservation-text">
+        <h1>Book Your Table</h1>
+        <p>Reserve your table today and enjoy an unforgettable dining experience at UrbanBites.</p>
+    </div>
+</section>
+
+<!-- Reservation Section -->
+<section class="reservation-section">
+
+    <div class="reservation-image">
+        <img src="{% static 'images/reservation.jpg' %}" alt="Reservation">
+    </div>
+
+    <div class="reservation-form">
+
+        <h2>Reserve a Table</h2>
+
+        <form>
+
+            <input type="text" placeholder="Full Name" required>
+
+            <input type="email" placeholder="Email Address" required>
+
+            <input type="tel" placeholder="Phone Number" required>
+
+            <input type="number" placeholder="Number of Guests" min="1" required>
+
+            <input type="date" name="date" required>
+
+            <input type="time" name="time" required>
+
+            <textarea rows="5" placeholder="Special Request (Optional)"></textarea>
+
+            <button type="submit">Reserve Now</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- Opening Hours -->
+<section class="opening-hours">
+
+    <h2>Opening Hours</h2>
+
+    <div class="hours-box">
+        <p><strong>Monday - Friday</strong></p>
+        <p>10:00 AM - 10:00 PM</p>
+
+        <br>
+
+        <p><strong>Saturday - Sunday</strong></p>
+        <p>10:00 AM - 11:30 PM</p>
+    </div>
+
+</section>
+
+{% endblock %}

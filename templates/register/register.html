@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Register | UrbanBites{% endblock %}
+
+{% block content %}
+
+<section class="login-section">
+
+    <div class="login-container">
+
+        <!-- Left Image -->
+        <div class="login-image">
+            <img src="{% static 'images/register.jpg' %}" alt="Register">
+        </div>
+
+        <!-- Right Side -->
+        <div class="login-form">
+
+            <h1>Create Account</h1>
+
+            <p>
+                Join UrbanBites and enjoy delicious meals, quick reservations,
+                and exclusive offers.
+            </p>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="message {{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <input type="text" name="fullname" placeholder="Full Name" required>
+
+                <input type="email" name="email" placeholder="Email Address" required>
+
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+
+                <input type="password" name="password" placeholder="Password" required>
+
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+                <button type="submit">Create Account</button>
+            </form>
+
+            <p class="register-link">
+                Already have an account?
+                <a href="{% url 'login' %}">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

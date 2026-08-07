@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="dashboard-section">
+
+
+    <div class="dashboard-header">
+
+        <div>
+            <h1>UrbanBites Dashboard</h1>
+            <p>Restaurant Overview</p>
+        </div>
+
+        <a href="{% url 'logout' %}" class="register-btn">
+            Logout
+        </a>
+
+    </div>
+
+
+
+    <div class="dashboard-cards">
+
+
+        <div class="dashboard-card">
+            <h3>Total Orders</h3>
+            <p>{{ total_orders }}</p>
+        </div>
+
+
+        <div class="dashboard-card">
+            <h3>Total Revenue</h3>
+            <p>₹{{ total_revenue }}</p>
+        </div>
+
+
+        <div class="dashboard-card">
+            <h3>Menu Items</h3>
+            <p>{{ total_items }}</p>
+        </div>
+
+
+        <div class="dashboard-card">
+            <h3>Pending Orders</h3>
+            <p>{{ pending_orders }}</p>
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- Recent Orders -->
+
+    <div class="dashboard-table">
+
+
+        <h2>Recent Orders</h2>
+
+
+
+        <table>
+
+
+            <thead>
+
+                <tr>
+
+                    <th>Customer</th>
+
+                    <th>Amount</th>
+
+                    <th>Date</th>
+
+                    <th>Status</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+
+
+            <tbody>
+
+
+            {% for order in recent_orders %}
+
+
+                <tr>
+
+
+                    <td>
+                        {{ order.customer_name }}
+                    </td>
+
+
+
+                    <td>
+                        ₹{{ order.total_price }}
+                    </td>
+
+
+
+                    <td>
+                        {{ order.created_at|date:"d M Y, h:i A" }}
+                    </td>
+
+
+
+                    <td>
+
+                        <span class="status {{ order.status|lower }}">
+                            {{ order.status }}
+                        </span>
+
+                    </td>
+
+
+
+                    <td>
+
+
+                        <form method="POST" action="{% url 'update_order_status' order.id %}">
+
+
+                            {% csrf_token %}
+
+
+                            <select name="status">
+
+
+                                <option value="Pending"
+                                {% if order.status == "Pending" %}selected{% endif %}>
+                                    Pending
+                                </option>
+
+
+                                <option value="Preparing"
+                                {% if order.status == "Preparing" %}selected{% endif %}>
+                                    Preparing
+                                </option>
+
+
+                                <option value="Delivered"
+                                {% if order.status == "Delivered" %}selected{% endif %}>
+                                    Delivered
+                                </option>
+
+
+                            </select>
+
+
+
+                            <button type="submit">
+                                Update
+                            </button>
+
+
+                        </form>
+
+
+                    </td>
+
+
+
+                </tr>
+
+
+            {% empty %}
+
+
+                <tr>
+
+                    <td colspan="5">
+                        No orders yet
+                    </td>
+
+                </tr>
+
+
+            {% endfor %}
+
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+
+</section>
+
+{% endblock %}

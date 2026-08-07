@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body>
+
+    {% include 'partials/navbar.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- Footer -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h2>Urban<span>Bites</span></h2>
+            <p>
+                Enjoy delicious meals prepared with fresh ingredients and served
+                with exceptional hospitality. Every bite is crafted with love.
+            </p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'menu' %}">Menu</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'reservation' %}">Reservation</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <div class="footer-col">
+
+            <h3>Contact</h3>
+
+            <p>Waghawadi Road,<br>Bhavnagar, Gujarat 364002</p>
+
+            <p>+91 99872 22222</p>
+
+            <p>info@urbanbites.com</p>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 UrbanBites. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="checkout-section">
+
+    <div class="section-title">
+        <h1>Checkout</h1>
+        <p>Complete your order</p>
+    </div>
+
+
+    <div class="checkout-box">
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+
+            <label>Name</label>
+            <input type="text" name="name" required>
+
+
+            <label>Phone</label>
+            <input type="text" name="phone" required>
+
+
+            <label>Address</label>
+            <textarea name="address" required></textarea>
+
+
+            <h2>
+                Total Amount: ₹{{ total }}
+            </h2>
+
+
+            <button type="submit">
+                Place Order
+            </button>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

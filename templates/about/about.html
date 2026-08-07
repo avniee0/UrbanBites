@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="about-hero">
+    <div class="about-text">
+        <h1>About UrbanBites</h1>
+        <p>
+            Serving delicious flavors with fresh ingredients and a passion 
+            for great food.
+        </p>
+    </div>
+</section>
+
+
+<section class="about-section">
+
+    <div class="about-image">
+        <img src="{% static 'images/restaurant.jpg' %}" alt="UrbanBites Restaurant">
+    </div>
+
+    <div class="about-content">
+        <h2>Our Story</h2>
+        <p>
+            At UrbanBites, we believe great food brings people together.
+            From crispy burgers to delicious pizzas and flavorful momos,
+            we prepare every dish with quality ingredients and care.
+        </p>
+
+        <p>
+            Our goal is to provide tasty meals, a comfortable experience,
+            and unforgettable flavors for every customer.
+        </p>
+    </div>
+
+</section>
+
+
+<section class="features">
+
+    <div class="feature-card">
+        <h3>Fresh Ingredients</h3>
+        <p>
+            We use fresh, high-quality ingredients to ensure every meal is
+            delicious, healthy, and full of flavor.
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Expert Chefs</h3>
+        <p>
+            Our experienced chefs prepare every dish with passion,
+            creativity, and attention to every detail.
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Quick Service</h3>
+        <p>
+            Enjoy freshly prepared food served quickly without compromising
+            on quality or taste.
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Made With Love</h3>
+        <p>
+            Every meal is prepared with care, dedication, and a commitment
+            to making every bite memorable.
+        </p>
+    </div>
+
+</section>
+
+{% endblock %}
