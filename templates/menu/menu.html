@@ -3,42 +3,39 @@
 
 {% block content %}
 
-<section class="menu-section">
+<div class="menu-title">
+    <h1>Our Menu</h1>
+    <p>Explore our delicious dishes</p>
+</div>
 
-    <div class="menu-title">
-        <h1>Our Menu</h1>
-        <p>Explore our delicious dishes</p>
-    </div>
+<div class="food-container">
 
+    {% for item in items %}
 
-    <div class="food-container">
+    <div class="food-card">
 
-        {% for item in items %}
+        {% if item.image %}
+            <img src="{% static item.image %}" alt="{{ item.name }}">
+        {% else %}
+            <img src="{% static 'images/menu/pizza.png' %}" alt="{{ item.name }}">
+        {% endif %}
 
-        <div class="food-card">
+        <h2>{{ item.name }}</h2>
 
-            {% if item.image %}
-            <img src="{{ item.image.url }}" alt="{{ item.name }}">
-            {% endif %}
+        <p>{{ item.description }}</p>
 
-            <h2>{{ item.name }}</h2>
+        <h3>₹{{ item.price }}</h3>
 
-            <p>{{ item.description }}</p>
-
-            <h3>₹{{ item.price }}</h3>
-
-            <a href="{% url 'add_to_cart' item.id %}" class="order-btn">Order Now</a>
-
-        </div>
-
-        {% empty %}
-
-        <h2>No menu items available</h2>
-
-        {% endfor %}
+        <a href="{% url 'add_to_cart' item.id %}" class="order-btn">Order Now</a>
 
     </div>
 
-</section>
+    {% empty %}
+
+    <h2>No menu items available</h2>
+
+    {% endfor %}
+
+</div>
 
 {% endblock %}
