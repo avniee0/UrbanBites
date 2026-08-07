@@ -71,7 +71,9 @@
 
 .nav-buttons{
     width:100%;
+    display:flex;
     justify-content:center;
+    gap:15px;
 }
 
 /* Hero */
@@ -182,6 +184,23 @@
 ========================= */
 
 @media (max-width:768px){
+
+@media (max-width:768px){
+
+.nav-buttons{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+}
+
+
+.login-btn,
+.register-btn{
+    width:140px;
+    text-align:center;
+}
 
 .dashboard-table{
     overflow-x:auto;
