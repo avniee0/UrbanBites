@@ -30,29 +30,122 @@ ul{
     margin:0 auto;
 }
 
-/* ===========================
-   Navbar
-=========================== */
-
+/* ===== Navbar ===== */
 .navbar{
-    width:100%;
-    background:#111827;
-    border-bottom:1px solid rgba(255,255,255,.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 28px;   /* changed */
+    background: rgba(6, 12, 35, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.navbar .container{
-    height:80px;
+.logo{
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo span{
+    color: #f5b041;
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 34px;   /* changed */
+    list-style: none;
+    margin: 0 auto;  /* added */
+    padding: 0;
+}
+
+.nav-links a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover{
+    color: #f5b041;
+}
+
+.login-btn{
+    border: 2px solid #f5b041;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+
+.register-btn{
+    background: #f5b041;
+    color: #06122b !important;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+.login-btn,
+.register-btn,
+.order-btn,
+.menu-btn{
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover{
+    background:#f5b041;
+    color:#06122b;
+    transform: translateY(-2px);
+}
+
+.register-btn:hover,
+.order-btn:hover,
+.menu-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(245,176,65,0.25);
+}
+.menu-toggle{
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.navbar{
     display:flex;
+    justify-content:space-between;
     align-items:center;
+}
+
+.nav-links{
+    flex:1;
+    justify-content:center;
+}
+
+/* Hide hamburger on desktop */
+.menu-toggle{
+    display:none;
+}
+
+/* Show hamburger only on mobile */
+@media (max-width:768px){
+    .menu-toggle{
+        display:block;
+    }
 }
 
 /* Logo */
 
 .logo{
-    flex:1;
-    font-size:2rem;
-    font-weight:700;
-    color:#fff;
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
 }
 
 .logo span{
@@ -69,14 +162,17 @@ ul{
 }
 
 .nav-links a{
-    color:#fff;
-    font-size:18px;
-    font-weight:500;
-    transition:0.3s;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;      /* increased */
+    font-weight: 600;       /* slightly bolder */
+    letter-spacing: 0.3px;
+    transition: all 0.25s ease;
 }
 
 .nav-links a:hover{
-    color:#f59e0b;
+    color: #f5b041;
+    transform: translateY(-2px);
 }
 
 /* Buttons */
@@ -132,6 +228,10 @@ ul{
 
 .hero-content{
     width:50%;
+}
+.hero{
+    min-height: calc(100vh - 80px);
+    align-items: center;
 }
 
 .tag{

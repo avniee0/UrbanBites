@@ -1,26 +1,39 @@
 <nav class="navbar">
-    <div class="container">
 
-        <!-- Logo -->
-        <a href="/" class="logo">
-            Urban<span>Bites</span>
-        </a>
+    <!-- Logo -->
+    <a href="{% url 'home' %}" class="logo">
+        Urban<span>Bites</span>
+    </a>
 
-        <!-- Navigation Links -->
-        <ul class="nav-links">
+    <!-- Mobile Menu Button -->
+    <button class="menu-toggle" id="menu-toggle">
+        ☰
+    </button>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" id="nav-links">
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'menu' %}">Menu</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'reservation' %}">Reservation</a></li>
         <li><a href="{% url 'contact' %}">Contact</a></li>
         <li><a href="{% url 'cart' %}">Cart</a></li>
-        </ul>
 
-        <!-- Buttons -->
-        <div class="nav-buttons">
-            <a href="{% url 'login' %}" class="login-btn">Login</a>
-            <a href="{% url 'register' %}" class="register-btn">Register</a>
-        </div>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}" class="login-btn">Logout</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}" class="login-btn">Login</a></li>
+            <li><a href="{% url 'register' %}" class="register-btn">Register</a></li>
+        {% endif %}
+    </ul>
 
-    </div>
 </nav>
+
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>

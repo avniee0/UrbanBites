@@ -134,8 +134,6 @@
 
 /* Contact */
 
-/* Contact */
-
 .contact-container{
     flex-direction:column;
     width:100%;
@@ -179,7 +177,6 @@
 }
 
 
-
 /* =========================
    MOBILE
 ========================= */
@@ -207,41 +204,43 @@
     padding:0 20px;
 }
 
-/* Navbar */
+/* ===== Mobile Navbar ===== */
 
-.navbar .container{
-    flex-direction:column;
-    align-items:center;
-    gap:20px;
+.navbar{
+    padding:16px 20px;
 }
 
-.logo{
-    font-size:32px;
+.menu-toggle{
+    display:block;
 }
 
 .nav-links{
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
+    position:absolute;
+    top:72px;
+    left:0;
     width:100%;
+    background:#06122b;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    padding:24px 0;
+    display:none;
+    border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.nav-buttons{
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-    gap:15px;
+.nav-links.active{
+    display:flex;
 }
 
 .login-btn,
 .register-btn{
-    width:auto;
-    min-width:130px;
+    width:220px;
     text-align:center;
 }
 
+.nav-links a{
+    font-size: 1.05rem;
+}
 /* Hero */
 
 .hero{
@@ -428,63 +427,6 @@
     .contact-info,
     .contact-form{
         width:100%;
-    }
-
-}
-/* =========================
-   NAVBAR FIX
-========================= */
-
-@media (max-width:992px){
-
-    .navbar .container{
-        flex-direction:column;
-        height:auto;
-        gap:20px;
-        padding:20px 0;
-    }
-
-    .logo{
-        width:100%;
-        text-align:center;
-        margin-bottom:10px;
-    }
-
-    .nav-links{
-        width:100%;
-        display:flex;
-        justify-content:center;
-        flex-wrap:wrap;
-        gap:20px;
-    }
-
-    .nav-buttons{
-        width:100%;
-        display:flex;
-        justify-content:center;
-        gap:15px;
-    }
-
-}
-
-
-@media (max-width:576px){
-
-    .nav-links{
-        flex-direction:column;
-        align-items:center;
-        gap:15px;
-    }
-
-    .nav-buttons{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .login-btn,
-    .register-btn{
-        width:200px;
-        text-align:center;
     }
 
 }
