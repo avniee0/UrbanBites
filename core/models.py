@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class MenuItem(models.Model):
     name = models.CharField(max_length=100)
     category = models.CharField(max_length=50)
@@ -12,7 +11,6 @@ class MenuItem(models.Model):
         return self.name
 
 
-
 class Order(models.Model):
 
     STATUS_CHOICES = (
@@ -22,11 +20,8 @@ class Order(models.Model):
         ('Cancelled', 'Cancelled'),
     )
 
-
     customer_name = models.CharField(max_length=100)
-
     item = models.CharField(max_length=100)
-
     amount = models.IntegerField()
 
     status = models.CharField(
@@ -35,10 +30,19 @@ class Order(models.Model):
         default='Pending'
     )
 
-    created_at = models.DateTimeField(
-        auto_now_add=True
-    )
-
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.customer_name
+
+
+# NEW MODEL
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name

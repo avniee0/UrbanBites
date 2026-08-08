@@ -2,30 +2,47 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib import messages
-from .models import MenuItem
+from .models import MenuItem, ContactMessage
 
 
+# Home Page
 def home(request):
     return render(request, 'home.html')
 
 
+# Menu Page
 def menu(request):
     items = MenuItem.objects.all()
     return render(request, 'menu/menu.html', {'items': items})
 
 
+# About Page
 def about(request):
     return render(request, 'about/about.html')
 
 
+# Reservation Page
 def reservation(request):
     return render(request, 'reservation/reservation.html')
 
 
+# Contact Page
 def contact(request):
+    if request.method == 'POST':
+        ContactMessage.objects.create(
+            name=request.POST.get('name'),
+            email=request.POST.get('email'),
+            subject=request.POST.get('subject'),
+            message=request.POST.get('message')
+        )
+
+        messages.success(request, 'Message sent successfully.')
+        return redirect('contact')
+
     return render(request, 'contact/contact.html')
 
 
+# Register Page
 def register(request):
     if request.method == "POST":
 
@@ -60,6 +77,7 @@ def register(request):
     return render(request, "register/register.html")
 
 
+# Login Page
 def login_user(request):
     if request.method == "POST":
 
@@ -82,6 +100,7 @@ def login_user(request):
     return render(request, "login/login.html")
 
 
+# Logout
 def logout_user(request):
     logout(request)
     messages.success(request, "Logged out successfully.")
