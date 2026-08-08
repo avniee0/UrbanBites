@@ -3,44 +3,63 @@
 
 {% block content %}
 
-<section class="food-container">
+<section class="menu-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Menu</h2>
+            <p>Explore our delicious dishes made with fresh ingredients.</p>
+        </div>
 
-    {% for item in items %}
-    <div class="food-card">
+        <div class="food-container">
 
-       {% load static %}
+            {% for item in items %}
+            <div class="food-card">
 
-        {% if 'pizza' in item.name|lower %}
-            <img src="{% static 'images/pizza.png' %}" alt="Pizza">
+                {% if 'pizza' in item.name|lower %}
+                    <img src="{% static 'images/pizza.png' %}" alt="Pizza">
 
-        {% elif 'pasta' in item.name|lower %}
-            <img src="{% static 'images/pasta.png' %}" alt="Pasta">
+                {% elif 'pasta' in item.name|lower %}
+                    <img src="{% static 'images/pasta.png' %}" alt="Pasta">
 
-        {% elif 'burger' in item.name|lower %}
-            <img src="{% static 'images/burger.png' %}" alt="Burger">
+                {% elif 'burger' in item.name|lower %}
+                    <img src="{% static 'images/burger.png' %}" alt="Burger">
 
-        {% elif 'coffee' in item.name|lower %}
-            <img src="{% static 'images/coffee.png' %}" alt="Coffee">
+                {% elif 'coffee' in item.name|lower %}
+                    <img src="{% static 'images/coffee.png' %}" alt="Coffee">
 
-        {% else %}
-    <       img src="{% static 'images/pizza.png' %}" alt="{{ item.name }}">
-        {% endif %}
+                {% elif 'momo' in item.name|lower %}
+                    <img src="{% static 'images/momo.png' %}" alt="Momo">
 
-        <h2>{{ item.name }}</h2>
+                {% elif 'french' in item.name|lower %}
+                    <img src="{% static 'images/french-fries.png' %}" alt="French Fries">
 
-        <p>{{ item.description }}</p>
+                {% elif 'chocolate' in item.name|lower %}
+                    <img src="{% static 'images/chocolate-dessert.png' %}" alt="Chocolate Dessert">
 
-        <h3>₹{{ item.price }}</h3>
+                {% else %}
+                    <img src="{% static 'images/pizza.png' %}" alt="{{ item.name }}">
+                {% endif %}
 
-        <a href="{% url 'add_to_cart' item.id %}" class="order-btn">
-            Order Now
-        </a>
+                <div class="food-content">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
 
+                    <div class="food-footer">
+                        <span class="food-price">₹{{ item.price }}</span>
+
+                        <a href="{% url 'add_to_cart' item.id %}" class="order-btn">
+                            Order Now
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            {% empty %}
+                <p>No menu items available.</p>
+            {% endfor %}
+
+        </div>
     </div>
-    {% empty %}
-        <p>No menu items available.</p>
-    {% endfor %}
-
 </section>
 
 {% endblock %}
