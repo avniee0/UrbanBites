@@ -232,16 +232,16 @@ body{
         display:flex;
         flex-direction:column;
         align-items:center;
-        gap:15px;
+        gap:18px; /* space between buttons */
         width:100%;
     }
 
-    .login-btn,
-    .register-btn{
+    .nav-buttons .btn-outline,
+    .nav-buttons .btn-primary{
         width:220px;
         text-align:center;
+        display:block;
     }
-
     /* Hero */
     .hero{
         padding:40px 20px;
