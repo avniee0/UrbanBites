@@ -8,10 +8,22 @@
     {% for item in items %}
     <div class="food-card">
 
-        {% if item.image %}
-            <img src="{{ item.image.url }}" alt="{{ item.name }}">
+       {% load static %}
+
+        {% if 'pizza' in item.name|lower %}
+            <img src="{% static 'images/pizza.png' %}" alt="Pizza">
+
+        {% elif 'pasta' in item.name|lower %}
+            <img src="{% static 'images/pasta.png' %}" alt="Pasta">
+
+        {% elif 'burger' in item.name|lower %}
+            <img src="{% static 'images/burger.png' %}" alt="Burger">
+
+        {% elif 'coffee' in item.name|lower %}
+            <img src="{% static 'images/coffee.png' %}" alt="Coffee">
+
         {% else %}
-            <img src="{% static 'images/pizza.png' %}" alt="Default Food">
+    <       img src="{% static 'images/pizza.png' %}" alt="{{ item.name }}">
         {% endif %}
 
         <h2>{{ item.name }}</h2>
