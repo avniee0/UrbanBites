@@ -9,9 +9,9 @@
     <div class="food-card">
 
         {% if item.image %}
-            <img src="/static/{{ item.image }}" alt="{{ item.name }}">
+            <img src="{{ item.image.url }}" alt="{{ item.name }}">
         {% else %}
-            <img src="/static/images/pizza.png" alt="Default Food">
+            <img src="{% static 'images/pizza.png' %}" alt="Default Food">
         {% endif %}
 
         <h2>{{ item.name }}</h2>
