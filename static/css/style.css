@@ -181,7 +181,7 @@ ul{
     flex:1;
     display:flex;
     justify-content:flex-end;
-    gap:12px;
+    gap:18px;
 }
 
 .login-btn,
@@ -2233,4 +2233,22 @@ table tr:hover{
 
     color:white;
 
+}
+/* ===== Menu card footer fix ===== */
+.food-footer{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+    margin-top:20px;
+}
+
+.food-price{
+    font-size:2rem;
+    font-weight:700;
+    color:#f5a623;
+}
+
+.food-footer .order-btn{
+    margin-top:5px;
 }
