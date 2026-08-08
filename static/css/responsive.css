@@ -2,6 +2,14 @@
    RESPONSIVE CSS
 ===================================== */
 
+/* Global Fix */
+*{
+    box-sizing:border-box;
+}
+
+body{
+    overflow-x:hidden;
+}
 
 /* =========================
    LARGE TABLETS
@@ -37,10 +45,7 @@
     .footer-container{
         grid-template-columns:1fr 1fr;
     }
-
 }
-
-
 
 /* =========================
    TABLETS
@@ -48,399 +53,91 @@
 
 @media (max-width:992px){
 
-/* Navbar */
-
-.navbar .container{
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-}
-
-.logo{
-    width:auto;
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.nav-links{
-    width:100%;
-    justify-content:center;
-    margin-bottom:20px;
-}
-
-.nav-buttons{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    gap:15px;
-}
-
-/* Hero */
-
-.hero{
-    flex-direction:column;
-    text-align:center;
-}
-
-.hero-content,
-.hero-image{
-    width:100%;
-}
-
-.hero-buttons{
-    justify-content:center;
-}
-
-.hero-image{
-    margin-top:40px;
-}
-
-.hero-image img{
-    width:420px;
-}
-
-/* About */
-
-.about-section{
-    flex-direction:column;
-    text-align:center;
-}
-
-.about-image img{
-    width:100%;
-    max-width:420px;
-}
-
-/* Reservation */
-
-.reservation-section{
-    flex-direction:column;
-}
-
-.reservation-image img{
-    max-width:100%;
-    height:380px;
-}
-
-.reservation-form{
-    width:100%;
-}
-.reservation-section{
-    width:90%;
-}
-
-.reservation-image{
-    width:100%;
-}
-
-/* Contact */
-
-.contact-container{
-    flex-direction:column;
-    width:100%;
-}
-
-.contact-info,
-.contact-form{
-    width:100%;
-}
-
-/* Login */
-
-.login-container{
-    flex-direction:column;
-}
-
-.login-image{
-    height:350px;
-}
-
-.login-image img{
-    height:100%;
-}
-
-.login-form{
-    padding:40px;
-}
-
-/* Dashboard */
-
-.dashboard-cards{
-    grid-template-columns:repeat(2,300px);
-    justify-content:center;
-}
-
-.footer-container{
-    grid-template-columns:1fr;
-    text-align:center;
-}
-
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width:768px){
-
-@media (max-width:768px){
-
-.nav-buttons{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:15px;
-}
-
-
-.login-btn,
-.register-btn{
-    width:140px;
-    text-align:center;
-}
-
-.dashboard-table{
-    overflow-x:auto;
-}
-
-.dashboard-table table{
-    min-width:600px;
-}
-.contact-section{
-    width:90%;
-    gap:30px;
-}
-.food-card img,
-.dish-card img{
-    height:200px;
-}
-
-.container{
-    width:100%;
-    padding:0 20px;
-}
-
-/* ===== Mobile Navbar ===== */
-
-.navbar{
-    padding:16px 20px;
-}
-
-.menu-toggle{
-    display:block;
-}
-
-.nav-links{
-    position:absolute;
-    top:72px;
-    left:0;
-    width:100%;
-    background:#06122b;
-    flex-direction:column;
-    align-items:center;
-    gap:18px;
-    padding:24px 0;
-    display:none;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-.nav-links.active{
-    display:flex;
-}
-
-.login-btn,
-.register-btn{
-    width:220px;
-    text-align:center;
-}
-
-.nav-links a{
-    font-size: 1.05rem;
-}
-/* Hero */
-
-.hero{
-    padding:40px 20px;
-}
-
-.hero h1{
-    font-size:2.3rem;
-}
-
-.hero p{
-    font-size:16px;
-}
-
-.hero-buttons{
-    flex-direction:column;
-    align-items:center;
-}
-
-.order-btn,
-.menu-btn{
-    width:220px;
-    text-align:center;
-}
-
-.hero-image img{
-    width:300px;
-}
-
-/* Popular Dishes */
-
-.dish-container{
-    grid-template-columns:1fr;
-}
-
-/* Menu */
-
-.food-container{
-    grid-template-columns:1fr;
-}
-
-/* Testimonials */
-
-.testimonial-container{
-    grid-template-columns:1fr;
-}
-
-/* Features */
-
-.features{
-    grid-template-columns:1fr;
-}
-
-/* Reservation */
-
-.reservation-image img{
-    height:280px;
-}
-
-/* Hours */
-
-.hours-box{
-    width:100%;
-}
-
-/* Cart */
-
-.cart-card{
-    width:100%;
-    flex-direction:column;
-    text-align:center;
-}
-
-.cart-card img{
-    width:150px;
-    height:150px;
-}
-
-/* Checkout */
-
-.checkout-box{
-    width:100%;
-}
-
-/* Dashboard */
-
-.dashboard-cards{
-    grid-template-columns:1fr;
-}
-
-/* Footer */
-
-.footer{
-    padding:50px 20px;
-}
-
-.footer-container{
-    grid-template-columns:1fr;
-    gap:40px;
-    text-align:center;
-}
-
-}
-
-
-
-/* =========================
-   SMALL PHONES
-========================= */
-
-@media (max-width:576px){
-
-.logo{
-    font-size:28px;
-}
-
-.hero h1{
-    font-size:2rem;
-}
-
-.hero-image img{
-    width:250px;
-}
-
-.section-title h1{
-    font-size:32px;
-}
-
-.section-title h2{
-    font-size:32px;
-}
-
-.about-content h2,
-.contact-info h2,
-.contact-form h2,
-.reservation-form h2{
-    font-size:28px;
-}
-
-.footer-col h2{
-    font-size:30px;
-}
-
-.login-form{
-    padding:25px;
-}
-
-.login-form h1{
-    font-size:32px;
-}
-
-.login-form p{
-    font-size:16px;
-}
-
-.contact-form{
-    padding:25px;
-}
-
-.reservation-form{
-    padding:25px;
-}
-
-.checkout-box{
-    padding:25px;
-}
-
-.hours-box{
-    padding:25px;
-}
-
-}
-/* =========================
-   CONTACT FIX
-========================= */
-
-@media (max-width:992px){
-
+    /* Navbar */
+    .navbar .container{
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .logo{
+        width:auto;
+        text-align:center;
+        margin-bottom:20px;
+    }
+
+    .nav-links{
+        width:100%;
+        justify-content:center;
+        margin-bottom:20px;
+    }
+
+    .nav-buttons{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        gap:15px;
+    }
+
+    /* Hero */
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-content,
+    .hero-image{
+        width:100%;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-image{
+        margin-top:40px;
+    }
+
+    .hero-image img{
+        width:420px;
+    }
+
+    /* About */
+    .about-section{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .about-image img{
+        width:100%;
+        max-width:420px;
+    }
+
+    /* Reservation */
+    .reservation-section{
+        flex-direction:column;
+        width:90%;
+    }
+
+    .reservation-image,
+    .reservation-form{
+        width:100%;
+    }
+
+    .reservation-image img{
+        width:100%;
+        max-width:100%;
+        height:380px;
+        object-fit:cover;
+    }
+
+    /* Contact */
     .contact-container{
+        display:flex;
         flex-direction:column;
         width:100%;
+        gap:20px;
     }
 
     .contact-info,
@@ -448,4 +145,282 @@
         width:100%;
     }
 
+    /* Login */
+    .login-container{
+        flex-direction:column;
+    }
+
+    .login-image{
+        height:350px;
+    }
+
+    .login-image img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+
+    .login-form{
+        padding:40px;
+    }
+
+    /* Dashboard */
+    .dashboard-cards{
+        grid-template-columns:repeat(2,300px);
+        justify-content:center;
+    }
+
+    /* Footer */
+    .footer-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    .container{
+        width:100%;
+        padding:0 20px;
+    }
+
+    /* Navbar */
+    .navbar{
+        width:100%;
+        padding:16px 20px;
+        position:relative;
+    }
+
+    .menu-toggle{
+        display:block;
+        font-size:28px;
+        color:#fff;
+        background:none;
+        border:none;
+        cursor:pointer;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        background:#06122b;
+        display:none;
+        flex-direction:column;
+        align-items:center;
+        gap:18px;
+        padding:24px 0;
+        border-bottom:1px solid rgba(255,255,255,0.08);
+        z-index:999;
+        margin-bottom:0;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        font-size:1.05rem;
+    }
+
+    .nav-buttons{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        width:100%;
+    }
+
+    .login-btn,
+    .register-btn{
+        width:220px;
+        text-align:center;
+    }
+
+    /* Hero */
+    .hero{
+        padding:40px 20px;
+    }
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .order-btn,
+    .menu-btn{
+        width:220px;
+        text-align:center;
+    }
+
+    .hero-image img{
+        width:100%;
+        max-width:320px;
+        height:auto;
+    }
+
+    /* Grids */
+    .dish-container,
+    .food-container,
+    .testimonial-container,
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    /* Cards */
+    .food-card img,
+    .dish-card img{
+        width:100%;
+        height:auto;
+        display:block;
+        border-radius:18px;
+    }
+
+    /* Reservation */
+    .reservation-image img{
+        height:280px;
+    }
+
+    /* Hours */
+    .hours-box{
+        width:100%;
+        padding:25px;
+    }
+
+    /* Contact */
+    .contact-section{
+        width:90%;
+        gap:30px;
+    }
+
+    .contact-container{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+        gap:20px;
+    }
+
+    .contact-info,
+    .contact-form{
+        width:100%;
+    }
+
+    .contact-form{
+        padding:25px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+        width:100%;
+    }
+
+    /* Cart */
+    .cart-card{
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .cart-card img{
+        width:150px;
+        height:150px;
+    }
+
+    /* Checkout */
+    .checkout-box{
+        width:100%;
+        padding:25px;
+    }
+
+    /* Dashboard */
+    .dashboard-cards{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-table{
+        overflow-x:auto;
+    }
+
+    .dashboard-table table{
+        min-width:600px;
+    }
+
+    /* Footer */
+    .footer{
+        padding:50px 20px;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+        gap:40px;
+        text-align:center;
+    }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width:576px){
+
+    .logo{
+        font-size:28px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .hero-image img{
+        max-width:250px;
+    }
+
+    .section-title h1,
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .about-content h2,
+    .contact-info h2,
+    .contact-form h2,
+    .reservation-form h2{
+        font-size:28px;
+    }
+
+    .footer-col h2{
+        font-size:30px;
+    }
+
+    .login-form{
+        padding:25px;
+    }
+
+    .login-form h1{
+        font-size:32px;
+    }
+
+    .login-form p{
+        font-size:16px;
+    }
+
+    .contact-form{
+        padding:25px;
+    }
+
+    .reservation-form{
+        padding:25px;
+    }
 }
