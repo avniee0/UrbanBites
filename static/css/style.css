@@ -1010,6 +1010,13 @@ Reservation Section
 .reservation-form button:hover{
     background:#fbbf24;
 }
+.form-label{
+    color:#ffffff;
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:6px;
+    display:block;
+}
 /* ===================================
    Opening Hours
 =================================== */
