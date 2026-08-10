@@ -3,72 +3,80 @@
 
 {% block content %}
 
-<section class="menu-section">
-    <div class="container">
+<div class="menu-section">
 
-        <div class="section-title">
-            <h2>Our Menu</h2>
-            <p>Explore our delicious dishes made with fresh ingredients.</p>
-        </div>
+```
+<div class="section-title">
+    <h2>Our Menu</h2>
+    <p>Explore our delicious dishes made with fresh ingredients.</p>
+</div>
 
-        <div class="food-container">
+<div class="food-container">
 
-            {% for item in items %}
-            <div class="food-card">
+    {% for item in items %}
+    <div class="food-card">
 
-                {% if 'pizza' in item.name|lower %}
-                    <img src="{% static 'images/pizza.png' %}" alt="Pizza">
+        {% if 'pizza' in item.name|lower %}
+            <img src="{% static 'images/pizza.png' %}" alt="Pizza">
 
-                {% elif 'pasta' in item.name|lower %}
-                    <img src="{% static 'images/pasta.png' %}" alt="Pasta">
+        {% elif 'pasta' in item.name|lower %}
+            <img src="{% static 'images/pasta.png' %}" alt="Pasta">
 
-                {% elif 'burger' in item.name|lower %}
-                    <img src="{% static 'images/burger.png' %}" alt="Burger">
+        {% elif 'burger' in item.name|lower %}
+            <img src="{% static 'images/burger.png' %}" alt="Burger">
 
-                {% elif 'coffee' in item.name|lower %}
-                    <img src="{% static 'images/coffee.png' %}" alt="Coffee">
+        {% elif 'coffee' in item.name|lower %}
+            <img src="{% static 'images/coffee.png' %}" alt="Coffee">
 
-                {% elif 'momo' in item.name|lower %}
-                    <img src="{% static 'images/momo.png' %}" alt="Momo">
+        {% elif 'momo' in item.name|lower %}
+            <img src="{% static 'images/momo.png' %}" alt="Momo">
 
-                {% elif 'french' in item.name|lower or 'fries' in item.name|lower %}
-                    <img src="{% static 'images/fries.png' %}" alt="French Fries">
+        {% elif 'french' in item.name|lower or 'fries' in item.name|lower %}
+            <img src="{% static 'images/fries.png' %}" alt="French Fries">
 
-                {% elif 'dessert' in item.name|lower or 'chocolate' in item.name|lower %}
-                    <img src="{% static 'images/dessert.png' %}" alt="Dessert">
+        {% elif 'dessert' in item.name|lower or 'chocolate' in item.name|lower %}
+            <img src="{% static 'images/dessert.png' %}" alt="Dessert">
 
-                {% elif 'sandwich' in item.name|lower %}
-                    <img src="{% static 'images/sandwich.png' %}" alt="Sandwich">
+        {% elif 'sandwich' in item.name|lower %}
+            <img src="{% static 'images/sandwich.png' %}" alt="Sandwich">
 
-                {% elif 'salad' in item.name|lower %}
-                    <img src="{% static 'images/salad.png' %}" alt="Salad">
+        {% elif 'salad' in item.name|lower %}
+            <img src="{% static 'images/salad.png' %}" alt="Salad">
 
+        {% else %}
+            <img src="{% static 'images/pizza.png' %}" alt="{{ item.name }}">
+        {% endif %}
+
+        <div class="food-content">
+            <h3>{{ item.name }}</h3>
+
+            <p>{{ item.description }}</p>
+
+            <div class="food-footer">
+                <span class="food-price">₹{{ item.price }}</span>
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'add_to_cart' item.id %}" class="order-btn">
+                        Order Now
+                    </a>
                 {% else %}
-                    <img src="{% static 'images/pizza.png' %}" alt="{{ item.name }}">
+                    <a href="{% url 'login' %}?next={% url 'add_to_cart' item.id %}" class="order-btn">
+                        Login to Order
+                    </a>
                 {% endif %}
 
-                <div class="food-content">
-                    <h3>{{ item.name }}</h3>
-
-                    <p>{{ item.description }}</p>
-
-                    <div class="food-footer">
-                        <span class="food-price">₹{{ item.price }}</span>
-
-                        <a href="{% url 'add_to_cart' item.id %}" class="order-btn">
-                            Order Now
-                        </a>
-                    </div>
-                </div>
-
             </div>
-            {% empty %}
-                <p>No menu items available.</p>
-            {% endfor %}
-
         </div>
 
     </div>
-</section>
+
+    {% empty %}
+        <p>No menu items available.</p>
+    {% endfor %}
+
+</div>
+```
+
+</div>
 
 {% endblock %}
