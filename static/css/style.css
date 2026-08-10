@@ -1015,7 +1015,7 @@ ul{
 .reservation-form button:hover{
     background:#fbbf24;
 }
-/* Text inside date and time boxes */
+/* Date & Time placeholder inside input box */
 
 .custom-input{
     position:relative;
@@ -1034,7 +1034,7 @@ ul{
     box-sizing:border-box;
 }
 
-.custom-input span{
+.custom-input .placeholder{
     position:absolute;
     left:18px;
     top:50%;
@@ -1042,13 +1042,12 @@ ul{
     color:#cbd5e1;
     font-size:16px;
     pointer-events:none;
-    transition:0.2s;
 }
 
-/* Hide text after user selects value */
+/* Hide placeholder when value is selected */
 
-.custom-input input:valid + span{
-    opacity:0;
+.custom-input input:valid + .placeholder{
+    display:none;
 }
 
 /* Keep native picker icon visible */
