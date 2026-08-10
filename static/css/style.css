@@ -887,7 +887,7 @@ ul{
 }
 
 /* ===================================
-   Reservation Section
+Reservation Section
 =================================== */
 
 .reservation-section{
@@ -916,7 +916,6 @@ ul{
     box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
-
 /* Form Card */
 
 .reservation-form{
@@ -934,42 +933,39 @@ ul{
     text-align:center;
 }
 
-
 .reservation-form form{
     display:flex;
     flex-direction:column;
     gap:18px;
 }
 
+/* Inputs */
 
 .reservation-form input,
 .reservation-form textarea{
-
     width:100%;
-    padding:15px;
+    padding:16px 18px;
     font-size:16px;
-
     background:#111827;
-    color:white;
-
+    color:#ffffff;
     border:1px solid #374151;
-    border-radius:10px;
-
+    border-radius:12px;
     outline:none;
     transition:0.3s;
     box-sizing:border-box;
 }
 
+/* Date & Time fix for iPhone/Safari */
 
-/* Placeholder Color */
-
-.reservation-form input::placeholder,
-.reservation-form textarea::placeholder{
-    color:#cbd5e1;
+.reservation-form input[type="date"],
+.reservation-form input[type="time"]{
+    min-height:58px;
+    -webkit-appearance:none;
+    appearance:none;
+    color:#ffffff;
 }
 
-
-/* White Calendar & Time Icons */
+/* White calendar & clock icons */
 
 .reservation-form input[type="date"]::-webkit-calendar-picker-indicator,
 .reservation-form input[type="time"]::-webkit-calendar-picker-indicator{
@@ -977,8 +973,14 @@ ul{
     cursor:pointer;
 }
 
+/* Placeholder */
 
-/* Focus Effect */
+.reservation-form input::placeholder,
+.reservation-form textarea::placeholder{
+    color:#cbd5e1;
+}
+
+/* Focus */
 
 .reservation-form input:focus,
 .reservation-form textarea:focus{
@@ -986,37 +988,28 @@ ul{
     box-shadow:0 0 8px rgba(245,158,11,0.3);
 }
 
-
 .reservation-form textarea{
     height:120px;
     resize:none;
 }
 
-
 /* Button */
 
 .reservation-form button{
-
     background:#f59e0b;
     color:#111827;
-
     border:none;
     padding:15px;
-
-    border-radius:10px;
-
+    border-radius:12px;
     font-size:17px;
     font-weight:600;
-
     cursor:pointer;
     transition:0.3s;
 }
 
-
 .reservation-form button:hover{
-    background:#d97706;
+    background:#fbbf24;
 }
-
 /* ===================================
    Opening Hours
 =================================== */
