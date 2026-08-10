@@ -3,48 +3,68 @@
 
 {% block content %}
 
-<div class="reservation-image">
-    <img src="{% static 'images/reservation.jpg' %}" alt="Reservation">
-</div>
+<!-- Reservation Hero Section -->
+<section class="reservation-hero">
+    <div class="reservation-text">
+        <h1>Reserve a Table</h1>
+        <p>Book your table online and enjoy a delicious dining experience at UrbanBites.</p>
+    </div>
+</section>
 
-<div class="reservation-form">
+<!-- Reservation Section -->
+<section class="reservation-section">
 
-    <h2>Reserve a Table</h2>
+    <!-- Image -->
+    <div class="reservation-image">
+        <img src="{% static 'images/reservation.jpg' %}" alt="Reservation">
+    </div>
 
-    <form>
+    <!-- Form -->
+    <div class="reservation-form">
 
-        <input type="text" placeholder="Full Name" required>
+        <h2>Reserve a Table</h2>
 
-        <input type="email" placeholder="Email Address" required>
+        <form>
 
-        <input type="tel" placeholder="Phone Number" required>
+            <input type="text" placeholder="Full Name" required>
 
-        <input type="number" placeholder="Number of Guests" min="1" required>
+            <input type="email" placeholder="Email Address" required>
 
-        <label class="form-label">Select Date</label>
-        <input type="date" name="date" required>
+            <input type="tel" placeholder="Phone Number" required>
 
-        <label class="form-label">Select Time</label>
-        <input type="time" name="time" required>
+            <input type="number" placeholder="Number of Guests" min="1" required>
 
-        <textarea rows="5" placeholder="Special Request (Optional)"></textarea>
+            <input type="date" name="date" required>
 
-        <button type="submit">Reserve Now</button>
+            <input type="time" name="time" required>
 
-    </form>
+            <textarea rows="5" placeholder="Special Request (Optional)"></textarea>
 
-</div>
+            <button type="submit">Reserve Now</button>
 
-<h2>Opening Hours</h2>
+        </form>
 
-<div class="hours-box">
-    <p><strong>Monday - Friday</strong></p>
-    <p>10:00 AM - 10:00 PM</p>
+    </div>
 
-    <br>
+</section>
 
-    <p><strong>Saturday - Sunday</strong></p>
-    <p>10:00 AM - 11:30 PM</p>
-</div>
+<!-- Opening Hours -->
+<section class="hours-section">
+
+    <h2>Opening Hours</h2>
+
+    <div class="hours-box">
+
+        <p><strong>Monday - Friday</strong></p>
+        <p>10:00 AM - 10:00 PM</p>
+
+        <br>
+
+        <p><strong>Saturday - Sunday</strong></p>
+        <p>10:00 AM - 11:30 PM</p>
+
+    </div>
+
+</section>
 
 {% endblock %}
