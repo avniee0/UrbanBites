@@ -1015,25 +1015,48 @@ ul{
 .reservation-form button:hover{
     background:#fbbf24;
 }
-/* Better mobile date & time fields */
+/* Text inside date and time boxes */
 
-.field-group{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
+.custom-input{
+    position:relative;
+    width:100%;
 }
 
-.field-group label{
+.custom-input input{
+    width:100%;
+    height:58px;
+    padding:16px 18px;
+    background:#111827;
     color:#ffffff;
-    font-size:15px;
-    font-weight:600;
-    display:flex;
-    align-items:center;
-    gap:8px;
+    border:1px solid #374151;
+    border-radius:12px;
+    font-size:16px;
+    box-sizing:border-box;
 }
 
-.field-group label span{
-    font-size:18px;
+.custom-input span{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#cbd5e1;
+    font-size:16px;
+    pointer-events:none;
+    transition:0.2s;
+}
+
+/* Hide text after user selects value */
+
+.custom-input input:valid + span{
+    opacity:0;
+}
+
+/* Keep native picker icon visible */
+
+.custom-input input::-webkit-calendar-picker-indicator{
+    filter:invert(1);
+    opacity:1;
+    cursor:pointer;
 }
 
 /* ===================================
