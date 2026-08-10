@@ -1,8 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 from core.models import MenuItem
 
-
 class Cart(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     item = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
 
@@ -10,4 +11,4 @@ class Cart(models.Model):
         return self.item.price * self.quantity
 
     def __str__(self):
-        return self.item.name
+        return f"{self.user.username} - {self.item.name}"
