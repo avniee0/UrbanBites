@@ -4,7 +4,6 @@
 {% block content %}
 
 <!-- Reservation Hero Section -->
-
 <section class="reservation-hero">
     <div class="reservation-text">
         <h1>Reserve a Table</h1>
@@ -13,61 +12,64 @@
 </section>
 
 <!-- Reservation Section -->
-
 <section class="reservation-section">
 
-<!-- Image -->
-<div class="reservation-image">
-    <img src="{% static 'images/reservation.jpg' %}" alt="Reservation">
-</div>
+    <!-- Image -->
+    <div class="reservation-image">
+        <img src="{% static 'images/reservation.jpg' %}" alt="Reservation">
+    </div>
 
-<!-- Form -->
-<div class="reservation-form">
+    <!-- Form -->
+    <div class="reservation-form">
 
-    <h2>Reserve a Table</h2>
+        <h2>Reserve a Table</h2>
 
-    <form>
+        <form>
 
-        <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="Full Name" required>
 
-        <input type="email" placeholder="Email Address" required>
+            <input type="email" placeholder="Email Address" required>
 
-        <input type="tel" placeholder="Phone Number" required>
+            <input type="tel" placeholder="Phone Number" required>
 
-        <input type="number" placeholder="Number of Guests" min="1" required>
+            <input type="number" placeholder="Number of Guests" min="1" required>
 
-        <input type="date" name="date" required>
+            <div class="field-group">
+                <label><span>📅</span> Select Date</label>
+                <input type="date" name="date" required>
+            </div>
 
-        <input type="time" name="time" required>
+            <div class="field-group">
+                <label><span>🕒</span> Select Time</label>
+                <input type="time" name="time" required>
+            </div>
 
-        <textarea rows="5" placeholder="Special Request (Optional)"></textarea>
+            <textarea rows="5" placeholder="Special Request (Optional)"></textarea>
 
-        <button type="submit">Reserve Now</button>
+            <button type="submit">Reserve Now</button>
 
-    </form>
+        </form>
 
-</div>
+    </div>
 
 </section>
 
 <!-- Opening Hours -->
-
 <section class="hours-section">
 
-```
-<h2>Opening Hours</h2>
+    <h2>Opening Hours</h2>
 
-<div class="hours-box">
+    <div class="hours-box">
 
-    <p><strong>Monday - Friday</strong></p>
-    <p>10:00 AM - 10:00 PM</p>
+        <p><strong>Monday - Friday</strong></p>
+        <p>10:00 AM - 10:00 PM</p>
 
-    <br>
+        <br>
 
-    <p><strong>Saturday - Sunday</strong></p>
-    <p>10:00 AM - 11:30 PM</p>
+        <p><strong>Saturday - Sunday</strong></p>
+        <p>10:00 AM - 11:30 PM</p>
 
-</div>
+    </div>
 
 </section>
 
