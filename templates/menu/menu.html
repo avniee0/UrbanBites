@@ -3,9 +3,6 @@
 
 {% block content %}
 
-<div class="menu-section">
-
-```
 <div class="section-title">
     <h2>Our Menu</h2>
     <p>Explore our delicious dishes made with fresh ingredients.</p>
@@ -48,12 +45,17 @@
         {% endif %}
 
         <div class="food-content">
+
             <h3>{{ item.name }}</h3>
 
             <p>{{ item.description }}</p>
 
+            <!-- Centered Price and Button -->
             <div class="food-footer">
-                <span class="food-price">₹{{ item.price }}</span>
+
+                <div class="price-wrapper">
+                    <span class="food-price">₹{{ item.price }}</span>
+                </div>
 
                 {% if user.is_authenticated %}
                     <a href="{% url 'add_to_cart' item.id %}" class="order-btn">
@@ -66,6 +68,7 @@
                 {% endif %}
 
             </div>
+
         </div>
 
     </div>
@@ -73,9 +76,6 @@
     {% empty %}
         <p>No menu items available.</p>
     {% endfor %}
-
-</div>
-```
 
 </div>
 

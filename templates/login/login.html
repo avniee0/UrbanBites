@@ -5,87 +5,79 @@
 
 {% block content %}
 
-<section class="login-section">
+<div class="login-container">
 
-    <div class="login-container">
+    <!-- Left Side -->
+    <div class="login-image">
+        <img src="{% static 'images/login.jpg' %}" alt="Login">
+    </div>
 
-        <!-- Left Side -->
+    <!-- Right Side -->
+    <div class="login-form">
 
-        <div class="login-image">
-            <img src="{% static 'images/login.jpg' %}" alt="Login">
-        </div>
+        <h1>Welcome Back</h1>
 
-        <!-- Right Side -->
+        <p>
+            Sign in to continue your UrbanBites experience.
+        </p>
 
-        <div class="login-form">
-
-            <h1>Welcome Back</h1>
-
-            <p>
-                Sign in to continue your UrbanBites experience.
-            </p>
-
-            <!-- Messages -->
-
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="message {{ message.tags }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-
-            <!-- Login Form -->
-
-            <form method="POST">
-
-                {% csrf_token %}
-
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
-                    required
-                >
-
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    required
-                >
-
-                <div class="login-options">
-
-                    <label>
-                        <input type="checkbox" name="remember">
-                        Remember Me
-                    </label>
-
-                    <a href="#">Forgot Password?</a>
-
+        <!-- Messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message {{ message.tags }}">
+                    {{ message }}
                 </div>
+            {% endfor %}
+        {% endif %}
 
-                <button type="submit">
-                    Login
-                </button>
+        <!-- Login Form -->
+        <form method="POST">
 
-            </form>
+            {% csrf_token %}
 
-            <p class="register-link">
+            <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+            >
 
-                Don't have an account?
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
 
-                <a href="{% url 'register' %}">
-                    Register
+            <!-- Remember + Forgot Password -->
+            <div class="login-options">
+
+                <label class="remember-me">
+                    <input type="checkbox" name="remember">
+                    <span>Remember Me</span>
+                </label>
+
+                <a href="#" class="forgot-password">
+                    Forgot Password?
                 </a>
 
-            </p>
+            </div>
 
-        </div>
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <p class="register-link">
+            Don't have an account?
+            <a href="{% url 'register' %}">
+                Register
+            </a>
+        </p>
 
     </div>
 
-</section>
+</div>
 
 {% endblock %}
